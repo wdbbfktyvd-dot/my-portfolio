@@ -63,6 +63,23 @@ const translations = {
           date: "Apr 2023 – Jun 2023",
           desc: "Modernized login pages (HTML/PUG/CSS) and integrated an interactive 'serious game' focused on workplace disability awareness.",
         },
+        {
+          role: "IT Support & Web Developer",
+          company: "DAESIGN",
+          date: "Apr 2025 – Aug 2025",
+          desc: "Provided technical support to users and developed web features to enhance operational efficiency.",
+        },
+      ],
+    },
+    otherExp: {
+      title: "Other Professional Experiences",
+      items: [
+        {
+          role: "Position Name",
+          company: "Company Name",
+          date: "Dates",
+          desc: "Developed strong work ethic, customer service skills, and autonomy in a fast-paced environment.",
+        },
       ],
     },
     education: {
@@ -71,7 +88,7 @@ const translations = {
         {
           degree: "MSc in Software Engineering",
           school: "CESI Graduate School of Engineering",
-          date: "2024 - 2028",
+          date: "2025 - 2028",
           desc: "Specializing in software architecture, project management, and advanced development.",
         },
         {
@@ -135,6 +152,23 @@ const translations = {
           date: "Avril 2023 – Juin 2023",
           desc: "Modernisation des pages de connexion et intégration d'un 'serious game' interactif sur la sensibilisation au handicap en entreprise.",
         },
+        {
+          role: "Support Informatique Et Développeur Web",
+          company: "DAESIGN",
+          date: "Avril 2025 – Août 2025",
+          desc: "Assistance technique aux utilisateurs et développement de fonctionnalités web pour améliorer l'efficacité opérationnelle.",
+        },
+      ],
+    },
+    otherExp: {
+      title: "Autres Expériences Professionnelles",
+      items: [
+        {
+          role: "Nom du poste",
+          company: "Nom de l'entreprise",
+          date: "Dates",
+          desc: "Développement de la rigueur, du sens du service client et de l'autonomie dans un environnement exigeant.",
+        },
       ],
     },
     education: {
@@ -143,7 +177,7 @@ const translations = {
         {
           degree: "Diplôme d'Ingénieur (Master)",
           school: "CESI École d'Ingénieurs",
-          date: "2024 - 2028",
+          date: "2025 - 2028",
           desc: "Spécialisation en génie logiciel, architecture système et gestion de projet.",
         },
         {
@@ -167,15 +201,13 @@ const translations = {
 };
 
 const techStack = [
-  // Langages
   { name: "C#" },
   { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E" },
   { name: "TypeScript", logo: "https://cdn.simpleicons.org/typescript/3178C6" },
   { name: "Java", logo: "https://cdn.simpleicons.org/openjdk/white" },
   { name: "Python", logo: "https://cdn.simpleicons.org/python/3776AB" },
-  { name: "SQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" }, // Utilisation du logo Postgres pour SQL
+  { name: "SQL", logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
 
-  // Frameworks & Front-end
   { name: "Angular", logo: "https://cdn.simpleicons.org/angular/DD0031" },
   { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/339933" },
   { name: "Bootstrap", logo: "https://cdn.simpleicons.org/bootstrap/7952B3" },
@@ -183,7 +215,6 @@ const techStack = [
   { name: "HTML5", logo: "https://cdn.simpleicons.org/html5/E34F26" },
   { name: "CSS3" },
 
-  // Outils
   { name: "GitHub", logo: "https://cdn.simpleicons.org/github/white" },
   { name: "GitLab", logo: "https://cdn.simpleicons.org/gitlab/FC6D26" },
   { name: "Docker", logo: "https://cdn.simpleicons.org/docker/2496ED" },
@@ -202,7 +233,8 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="font-bold tracking-tighter text-xl">
-            THEO<span className="text-blue-500">.</span>CACARD<span className="text-blue-500">.</span>
+            THEO<span className="text-blue-500">.</span>CACARD
+            <span className="text-blue-500">.</span>
           </span>
           <div className="flex items-center gap-8">
             <div className="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
@@ -260,7 +292,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* SKILLS & LANGUAGES SECTION */}
       {/* SECTION SKILLS BOX */}
       <section className="max-w-5xl mx-auto px-6 py-12">
         <div className="bg-neutral-900/50 border border-white/5 rounded-3xl overflow-hidden">
@@ -373,6 +404,36 @@ export default function Portfolio() {
                   {edu.school} • {edu.date}
                 </p>
                 <p className="text-sm text-neutral-400">{edu.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OTHER EXPERIENCES SECTION (FULL WIDTH & CENTERED) */}
+      <section className="max-w-5xl mx-auto px-6 py-24 border-t border-white/5 border-b border-white/5 mb-24">
+        <div className="max-w-2xl mx-auto">
+          {" "}
+          {/* On réduit la largeur ici pour centrer le contenu */}
+          <h2 className="text-2xl font-bold text-white mb-12 flex items-center justify-center gap-3">
+            <Briefcase size={24} className="text-blue-500" />
+            {t.otherExp.title}
+          </h2>
+          <div className="space-y-8 border-l border-white/10 pl-6">
+            {t.otherExp.items.map((exp, i) => (
+              <div key={i} className="relative">
+                {/* Le point sur la timeline */}
+                <div className="absolute -left-[31px] top-1.5 w-3 h-3 bg-blue-500 rounded-full border-4 border-[#0a0a0a]" />
+
+                <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:bg-white/[0.04] transition-colors">
+                  <h4 className="text-white font-bold text-lg">{exp.role}</h4>
+                  <p className="text-sm text-blue-500 mb-3">
+                    {exp.company} • {exp.date}
+                  </p>
+                  <p className="text-sm text-neutral-400 leading-relaxed">
+                    {exp.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
